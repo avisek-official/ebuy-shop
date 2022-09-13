@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Aboreto&family=Nunito&family=Roboto&display=swap");
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: rgb(203, 202, 204);
+  scroll-behavior: smooth;
+}

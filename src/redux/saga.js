@@ -63,7 +63,7 @@ function* userLogin(action) {
     const email = action.data.email;
     const password = action.data.password;
     let data = yield axios.post(
-      `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyA11S1Wacn3JN1o34RbgbgHggpMskipOto`,
+      `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=[API_KEY]`,
       { email: email, password: password, returnSecureToken: true }
     );
     let loggedUserCart = [];
@@ -96,7 +96,7 @@ function* userSignup(action) {
     const email = action.data.email;
     const password = action.data.password;
     let data = yield axios.post(
-      `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyA11S1Wacn3JN1o34RbgbgHggpMskipOto`,
+      `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=[API_KEY]`,
       { email: email, password: password, returnSecureToken: true }
     );
 
@@ -126,7 +126,7 @@ function* refreshUserAuth(action) {
     yield put({ type: "REFRESH_USER_LOGIN", data: ["loading"] });
     const idToken = action.data.idToken;
     let data = yield axios.post(
-      `https://identitytoolkit.googleapis.com/v1/accounts:lookup?key=AIzaSyA11S1Wacn3JN1o34RbgbgHggpMskipOto`,
+      `https://identitytoolkit.googleapis.com/v1/accounts:lookup?key=[API_KEY]`,
       { idToken }
     );
     //yield (data = data["data"]);
@@ -173,7 +173,7 @@ function* updatePassword(action) {
   try {
     yield put({ type: "UPDATE_USER_PWD", data: "loading" });
     let data = yield axios.post(
-      `https://identitytoolkit.googleapis.com/v1/accounts:update?key=AIzaSyA11S1Wacn3JN1o34RbgbgHggpMskipOto`,
+      `https://identitytoolkit.googleapis.com/v1/accounts:update?key=[API_KEY]`,
       {
         idToken: action.data.idToken,
         password: action.data.password,

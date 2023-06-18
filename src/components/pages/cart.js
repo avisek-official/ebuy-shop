@@ -309,7 +309,7 @@ const Cart = (props) => {
                         </button>
                       </span>
                       <span className="w-[45%] flex justify-center items-center text-emerald-800 font-bold">
-                        $ {item.price * item.quantity}
+                        $ {(item.price * item.quantity).toFixed(2)}
                       </span>
                       <span className="w-[10%] flex justify-center items-center">
                         <BsTrashFill
